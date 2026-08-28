@@ -1,0 +1,54 @@
+policy_id,variant,raw_name,benchmark,score,paper,n_task_scores,suspect,is_base
+awq,quantized,"AWQ (OpenVLA-OFT, 2.0 bpw)",libero,0.0,https://arxiv.org/abs/2605.24011,0,True,False
+awq,quantized,"AWQ (pi_0.5, 2.0 bpw)",libero,0.0,https://arxiv.org/abs/2605.24011,0,True,False
+fast,,FAST,libero,,https://arxiv.org/abs/2606.21372,0,True,True
+fasterwam,ours,Faster-WAM (Ours),libero,98.3,https://arxiv.org/abs/2608.02365,0,True,False
+fasterwam,ours,Faster-WAM (Ours),libero,98.9,https://arxiv.org/abs/2608.04404,0,True,False
+fasterwam,ours,Faster-WAM (Ours),libero_plus,75.0,https://arxiv.org/abs/2608.02365,0,True,False
+fasterwam,ours,Faster-WAM (Ours),libero_plus,74.3,https://arxiv.org/abs/2608.04404,0,True,False
+fasterwam,ours,Faster-WAM (Ours),robotwin_v2,,https://arxiv.org/abs/2608.02365,0,True,False
+fasterwam,ours,Faster-WAM (Ours),robotwin_v2,,https://arxiv.org/abs/2608.04404,0,True,False
+gptq,quantized,"GPTQ (OpenVLA-OFT, 2.0 bpw)",libero,0.0,https://arxiv.org/abs/2605.24011,0,True,False
+gptq,quantized,"GPTQ (pi_0.5, 2.0 bpw)",libero,0.0,https://arxiv.org/abs/2605.24011,0,True,False
+qvla,"pi_0.5, 2.0 bpw","QVLA (pi_0.5, 2.0 bpw)",libero,0.0,https://arxiv.org/abs/2605.24011,0,True,False
+slotvla,h=1,SlotVLA (h=1),libero_mem,0.0,https://arxiv.org/abs/2511.11478,10,True,False
+univla,,UniVLA,calvin,4.41,https://arxiv.org/abs/2506.19850,0,True,True
+univla,,UniVLA,calvin,,https://arxiv.org/abs/2509.26251,1,True,True
+univla,,UniVLA,calvin,4.26,https://arxiv.org/abs/2603.26320,0,True,True
+univla,third-view,UniVLA (third-view),calvin,3.8,https://arxiv.org/abs/2605.08799,0,True,False
+univla,,UniVLA,calvin,3.8,https://arxiv.org/abs/2601.01948,0,True,True
+univla,,UniVLA,calvin,4.41,https://arxiv.org/abs/2603.01766,0,True,True
+univla,,Uni-VLA,calvin,3.8,https://arxiv.org/abs/2603.16195,0,True,True
+univla,,UniVLA,calvin,4.102,https://arxiv.org/abs/2603.03195,0,True,True
+univla,,UniVLA,calvin,3.8,https://arxiv.org/abs/2605.31234,0,True,True
+univla,,UniVLA,calvin,3.8,https://arxiv.org/abs/2603.09542,0,True,True
+univla,,UniVLA,calvin,,https://arxiv.org/abs/2506.19850,0,True,True
+univla,,UniVLA,libero,95.2,https://arxiv.org/abs/2505.06111,0,True,True
+univla,,UniVLA,libero,95.2,https://arxiv.org/abs/2511.17502,0,True,True
+univla,,UniVLA,libero,,https://arxiv.org/abs/2606.26183,0,True,True
+univla,,UniVLA,libero,97.1,https://arxiv.org/abs/2509.09674,0,True,True
+univla,,UniVLA,libero,94.0,https://arxiv.org/abs/2608.05970,0,True,True
+univla,,UniVLA,libero,94.9,https://arxiv.org/abs/2603.03195,0,True,True
+univla,,UniVLA,libero,95.4,https://arxiv.org/abs/2510.10274,0,True,True
+univla,,UniVLA,libero,95.4,https://arxiv.org/abs/2601.11404,0,True,True
+univla,,UniVLA,libero,55.1,https://arxiv.org/abs/2603.09542,0,True,True
+univla,bridge,UniVLA (Bridge),libero,92.5,https://arxiv.org/abs/2505.06111,0,True,False
+univla,human,UniVLA (Human),libero,88.8,https://arxiv.org/abs/2505.06111,0,True,False
+univla,,UniVLA,libero,95.4,https://arxiv.org/abs/2506.19850,0,True,True
+univla,,UniVLA,libero,95.1,https://arxiv.org/abs/2608.00569,0,True,True
+univla,,UniVLA,libero_plus,45.8,https://arxiv.org/abs/2510.13626,0,True,True
+univla,,UniVLA,libero_plus,45.9,https://arxiv.org/abs/2602.08602,0,True,True
+univla,,UniVLA,libero_plus,47.0,https://arxiv.org/abs/2607.18060,0,True,True
+univla,,UniVLA,libero_plus,,https://arxiv.org/abs/2607.25487,0,True,True
+univla,,UniVLA,libero_plus,45.8,https://arxiv.org/abs/2602.12062,0,True,True
+univla,,UniVLA,libero_plus,,https://arxiv.org/abs/2608.05903,1,True,True
+univla,,UniVLA,libero_plus,,https://arxiv.org/abs/2607.24159,1,True,True
+univla,,UniVLA,libero_pro,,https://arxiv.org/abs/2512.09619,0,True,True
+univla,,UniVLA,libero_pro,,https://arxiv.org/abs/2607.12356,0,True,True
+univla,,UniVLA,robotwin_v2,,https://arxiv.org/abs/2606.18955,10,True,True
+univla,,UniVLA,simpler_env,,https://arxiv.org/abs/2506.19850,4,True,True
+univla,,UniVLA,simpler_env,,https://arxiv.org/abs/2601.16065,0,True,True
+univla,,UniVLA,simpler_env,,https://arxiv.org/abs/2603.03195,4,True,True
+univla,,UniVLA,simpler_env,,https://arxiv.org/abs/2602.03668,4,True,True
+univla,,UniVLA,simpler_env,,https://arxiv.org/abs/2512.04952,4,True,True
+univla,,UniVLA,simpler_env,,https://arxiv.org/abs/2602.22010,4,True,True
