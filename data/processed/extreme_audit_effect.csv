@@ -1,0 +1,11 @@
+cell,raw,aud,aud_lo,aud_hi,aud_n
+openvla/libero,61.4,9.7,69.2,78.9,16
+diffusionpolicy/libero,60.6,6.9,69.9,76.8,9
+pi0/libero,59.4,35.7,61.1,96.8,47
+openvlaoft/libero,48.4,22.5,74.8,97.3,26
+vlaadapter/libero,33.2,4.3,94.2,98.5,7
+smolvla/libero,32.3,25.3,63.5,88.8,7
+pi0fast/libero,21.6,7.9,85.5,93.4,27
+pi0.5/libero_plus,21.5,21.5,65.0,86.5,10
+gr00tn1/libero,19.7,2.3,93.9,96.2,6
+gr00tn1.5/libero,17.8,17.8,78.1,95.9,9

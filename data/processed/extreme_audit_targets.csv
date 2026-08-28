@@ -1,0 +1,21 @@
+cell,kind,score,raw_name,paper
+openvla/libero,MIN,35.6,OpenVLA,https://arxiv.org/abs/2603.09542
+openvla/libero,MAX,97.0,OpenVLA,https://arxiv.org/abs/2510.03827
+diffusionpolicy/libero,MIN,17.2,Diffusion Policy,https://arxiv.org/abs/2603.09542
+diffusionpolicy/libero,MAX,77.8,Diffusion Policy,https://arxiv.org/abs/2606.16178
+pi0/libero,MIN,37.4,π0,https://arxiv.org/abs/2603.09542
+pi0/libero,MAX,96.8,π₀,https://arxiv.org/abs/2602.04228
+openvlaoft/libero,MIN,48.9,OpenVLA-OFT,https://arxiv.org/abs/2603.09542
+openvlaoft/libero,MAX,97.3,OpenVLA-OFT,https://arxiv.org/abs/2512.10394
+vlaadapter/libero,MIN,65.3,VLA-Adapter,https://arxiv.org/abs/2603.09542
+vlaadapter/libero,MAX,98.4,VLA-Adapter,https://arxiv.org/abs/2511.18810
+smolvla/libero,MIN,63.5,SmolVLA,https://arxiv.org/abs/2607.23473
+smolvla/libero,MAX,95.8,SmolVLA,https://arxiv.org/abs/2603.28565
+pi0fast/libero,MIN,71.8,π_{0}-FAST,https://arxiv.org/abs/2607.13429
+pi0fast/libero,MAX,93.4,pi0-FAST,https://arxiv.org/abs/2510.04246
+pi0.5/libero_plus,MIN,65.0,π₀.₅,https://arxiv.org/abs/2602.08602
+pi0.5/libero_plus,MAX,86.5,pi0.5,https://arxiv.org/abs/2601.11404
+gr00tn1/libero,MIN,76.5,GR00T N1,https://arxiv.org/abs/2606.19531
+gr00tn1/libero,MAX,96.2,GR00T-N1,https://arxiv.org/abs/2607.00351
+gr00tn1.5/libero,MIN,78.1,GR00T N1.5,https://arxiv.org/abs/2606.19784
+gr00tn1.5/libero,MAX,95.8,GR00T N1.5,https://arxiv.org/abs/2510.04246

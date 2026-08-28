@@ -1,0 +1,21 @@
+cell,paper_id,action,score,category,note
+openvla/libero,2603.09542,drop,,protocol-1shot,NS-VLA 1-demo-per-task regime; also 35.6 vs paper 35.7
+openvla/libero,2510.03827,drop,,citation-error,LIBERO-PRO v1 secondhand compilation; contradicts OpenVLA's own 76.5; table removed in v2
+diffusionpolicy/libero,2603.09542,drop,,protocol-1shot,"NS-VLA 1-shot; DP is Han et al. 2024, not Chi et al."
+diffusionpolicy/libero,2606.16178,drop,,secondhand-derived,"PRISM: avg printed as '-', 77.8 extractor-computed from numbers adopted from prior works"
+pi0/libero,2603.09542,drop,,protocol-1shot,NS-VLA 1-shot regime
+pi0/libero,2602.04228,keep,96.8,standard,T-MEE clean full-suite fine-tune
+openvlaoft/libero,2603.09542,drop,,protocol-1shot,NS-VLA 1-shot regime
+openvlaoft/libero,2512.10394,keep,97.3,standard-derived,RoboNeuron; avg computed but suite scores verbatim
+vlaadapter/libero,2603.09542,drop,,protocol-1shot,NS-VLA 1-shot regime
+vlaadapter/libero,2511.18810,correct,98.5,single-task-upperbound,MergeVLA per-suite fine-tune upper bound; 98.4 -> 98.5
+smolvla/libero,2607.23473,keep,63.5,reproduction,PRISM own budget-capped reproduction (80K ckpt)
+smolvla/libero,2603.28565,drop,,misattribution,"StreamingVLA row is pi0.5 with SmolVLA-style async inference, not SmolVLA"
+pi0fast/libero,2607.13429,drop,,secondhand-derived,"Anchor-Align cited outlier row, unclear provenance, avg never printed"
+pi0fast/libero,2510.04246,keep,93.4,standard,ContextVLA clean baseline
+pi0.5/libero_plus,2602.08602,keep,65.0,reproduction,"MINT own zero-shot run, standard LIBERO-Plus protocol"
+pi0.5/libero_plus,2601.11404,correct,85.7,reproduction,ACoT zero-shot official-ckpt; 86.5 -> 85.7 (86.5 not in paper)
+gr00tn1/libero,2606.19531,drop,,citation-error,ImageWAM row duplicates OpenVLA's numbers digit-for-digit
+gr00tn1/libero,2607.00351,keep,96.2,standard-derived,4-suite subset of 6-suite table; correct for this cell
+gr00tn1.5/libero,2606.19784,keep,78.1,reproduction,"EquiVLA own reproduction, relative EE control"
+gr00tn1.5/libero,2510.04246,correct,95.9,standard,ContextVLA; 95.8 was wrong-cell grab of true 95.9
