@@ -75,7 +75,28 @@ gpt4o, gpt4v, gpt4, rl, grpo. Reviewer caveat adopted for the paper: DP/ACT
 rows are per-paper REIMPLEMENTATIONS of one method, so their cross-paper
 variance mixes protocol and implementation; this is a finding, not noise.
 
+## 30-entry extraction audit (agent-assisted, completed Aug 28 2026)
+
+Method: three independent agents fetched each entry's source paper (arXiv
+HTML) and compared the corpus numbers to the paper's tables. Human
+adjudication of the 5 non-exact entries pending (audit_escalations.csv).
+
+Result: 25/30 EXACT, 3 PARTIAL, 1 MISMATCH, 1 wrong-paper citation.
+- Serious errors (2/30 ~= 6.7%): simpler_env RT-2-X score 60.53 appears
+  nowhere in its cited paper (2607.07076: VM avg 46.3, VA 54.4); calvin
+  RoboUniview cites 2505.07817, which never mentions the model (correct
+  source is 2406.18977).
+- Minor errors (3/30 = 10%): a goal/object column swap (MolmoAct entry,
+  overall 86.8 vs 86.6); two aggregate slips of 0.1 (UniVLA 94.0 vs 93.9;
+  pi0-FAST VLABench "overall" 49.6 vs recomputable 49.5 — aggregates
+  appear LLM-recomputed rather than read).
+Implications adopted: (a) prefer suite-level scores over "overall" fields
+where both exist; (b) the 0.1-0.2-point slip scale is far below the
+tens-of-points reporting variance we measure, so the headline analysis is
+robust to it; (c) the ~7% serious-error rate is itself a paper finding
+about LLM-curated corpora and is reported as such.
+
 ## Open items
 
-- Manual 30-entry audit (Mikul) pending: data/processed/audit_sample_30.csv.
+- Mikul: adjudicate the 5 rows in audit_escalations.csv (~15 min).
 - univla + fasterwam disambiguation by reading the reporting papers.

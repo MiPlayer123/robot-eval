@@ -3,6 +3,25 @@
 Working title: "The Reporting Noise Floor: What VLA Benchmark Scores
 Actually Measure"
 
+## RESULTS STATUS (Aug 28): all three analyses run on cleaned data
+
+- Headline: median claimed improvement (top1-top2 margin per
+  paper-benchmark, n=353) is 1.9 points; the median cross-paper spread of
+  popular cells (>=5 reporting papers, n=25) is 14.2 points, i.e. ~7.5x.
+  Tail: OpenVLA/LIBERO spans 61.4 pts across 18 papers; pi0/LIBERO 59.4
+  across 48. Spread grows with popularity (Spearman 0.57).
+- Pre-registered hypothesis AS STATED not supported (median cell spread
+  3.9 < raw between-benchmark spread 67) - but raw between-benchmark
+  spread is a difficulty artifact; report honestly and pivot to ranks.
+- Concordance (suite-level units, n>=8 shared): within-benchmark median
+  rho 0.72 vs cross-benchmark 0.49; only 85/173 cross pairs have CIs
+  excluding zero. Perturbation suites (noise/camera) are nearly
+  orthogonal to clean scores: median rho 0.25, 22/24 CIs span zero.
+- Extraction audit: 25/30 exact, ~7% serious error rate in the
+  LLM-curated corpus (wrong-paper citation; a score not in its paper);
+  aggregates appear LLM-recomputed (two 0.1-pt slips). 5 escalations
+  pending human adjudication.
+
 ## 1. Introduction (0.5 pg)
 Claim: before asking which benchmark to trust, ask whether the same
 model's score on the same benchmark is stable across reporting papers.

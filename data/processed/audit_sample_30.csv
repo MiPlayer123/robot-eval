@@ -1,31 +1,31 @@
-benchmark,raw_name,policy_id,variant,score,paper,found_in_paper,matches (Y/N/partial),notes
-calvin,OpenVLA-OFT,openvlaoft,,3.917,https://arxiv.org/abs/2605.31234,,,
-calvin,RoboUniview,robouniview,,3.65,https://arxiv.org/abs/2505.07817,,,
-calvin,UnifiedVLA,unifiedvla,,,https://arxiv.org/abs/2511.18960,,,
-libero,EO1 (reproduced),eo1,reproduction,93.1,https://arxiv.org/abs/2605.21414,,,
-libero,MCC-Oracle,mccoracle,,,https://arxiv.org/abs/2607.23473,,,
-libero,MolmoAct,molmoact,,86.8,https://arxiv.org/abs/2602.01166,,,
-libero,PearlVLA + CRG-PRL (Ours),pearlvla+crgprl,ours,98.7,https://arxiv.org/abs/2606.17924,,,
-libero,RynnVLA-002,rynnvla002,,97.4,https://arxiv.org/abs/2607.03461,,,
-libero,SmolVLA,smolvla,,,https://arxiv.org/abs/2607.27933,,,
-libero,UniVLA,univla,,94.0,https://arxiv.org/abs/2608.05970,,,
-libero,UniVLA (Bridge),univla,bridge,92.5,https://arxiv.org/abs/2505.06111,,,
-libero,VIPA-VLA (two-view),vipavla,two-view,96.8,https://arxiv.org/abs/2512.13080,,,
-libero,VQ-VLA,vqvla,,,https://arxiv.org/abs/2606.21372,,,
-libero_plus,OpenVLA*-One (zero-shot),openvla*one,zero-shot,19.4,https://arxiv.org/abs/2511.15605,,,
-libero_plus,π0-Fast,pi0fast,,,https://arxiv.org/abs/2603.09542,,,
-libero_pro,RATs,rats,,,https://arxiv.org/abs/2606.30613,,,
-maniskill2,DINOv2,dinov2,,,https://arxiv.org/abs/2606.17256,,,
-rlbench,Image-BC (CNN),imagebc,cnn,1.3,https://arxiv.org/abs/2506.07961,,,
-rlbench,Structural Latent Points,structurallatentpoints,,,https://arxiv.org/abs/2605.21258,,,
-robocasa,DUST (100 demos),dust,data-budget,,https://arxiv.org/abs/2510.27607,,,
-robocasa,Early Fusion,earlyfusion,,,https://arxiv.org/abs/2605.24642,,,
-robotwin_v1,Proposed Method (3D point cloud obs),proposedmethod,3d point cloud obs,,https://arxiv.org/abs/2606.19194,,,
-robotwin_v2,AIM Stage1,aimstage1,,,https://arxiv.org/abs/2604.11135,,,
-robotwin_v2,"Full-data fine-tuning (π0, joint)",fulldatafinetuning,finetune,,https://arxiv.org/abs/2606.16208,,,
-robotwin_v2,InternVLA-A1.5 (Ours),internvlaa1.5,ours,,https://arxiv.org/abs/2607.04988,,,
-simpler_env,FASTer w/o BAR,fasterw/obar,ablation,,https://arxiv.org/abs/2512.04952,,,
-simpler_env,OpenVLA-OFT,openvlaoft,,,https://arxiv.org/abs/2605.24203,,,
-simpler_env,RT-2-X,rt2x,,,https://arxiv.org/abs/2607.07076,,,
-simpler_env,RoboVLMs,robovlm,,,https://arxiv.org/abs/2508.19236,,,
-vlabench,π_0-FAST,pi0fast,,49.6,https://arxiv.org/abs/2607.15330,,,
+benchmark,raw_name,policy_id,variant,score,paper,found_in_paper,matches (Y/N/partial),notes,claimed_scores
+calvin,OpenVLA-OFT,openvlaoft,,3.917,https://arxiv.org/abs/2605.31234,yes,Y,EXACT,overall=3.917; 1_task=94.2; 2_tasks=86.4; 3_tasks=78.0; 4_tasks=70.4; 5_tasks=62.7
+calvin,RoboUniview,robouniview,,3.65,https://arxiv.org/abs/2505.07817,no,N,"NOT_FOUND (wrong paper cited; RoboUniView is arXiv 2406.18977, cited 2505.07817 never mentions it)",overall=3.65; 1_task=94.2; 2_tasks=84.2; 3_tasks=73.4; 4_tasks=62.2; 5_tasks=50.7
+calvin,UnifiedVLA,unifiedvla,,,https://arxiv.org/abs/2511.18960,yes,Y,EXACT,1_task=98.9; 2_tasks=94.8; 3_tasks=89.0; 4_tasks=82.8; 5_tasks=75.1
+libero,EO1 (reproduced),eo1,reproduction,93.1,https://arxiv.org/abs/2605.21414,yes,Y,EXACT,overall=93.1; libero_spatial=91.8; libero_object=98.2; libero_goal=96.6; libero_10=85.6
+libero,MCC-Oracle,mccoracle,,,https://arxiv.org/abs/2607.23473,yes,Y,EXACT,libero_spatial=81.0; libero_object=37.0; libero_goal=82.0; libero_10=58.0
+libero,MolmoAct,molmoact,,86.8,https://arxiv.org/abs/2602.01166,yes,partial,PARTIAL (object/goal columns swapped vs paper; overall 86.8 vs paper 86.6),overall=86.8; libero_spatial=87.0; libero_object=95.4; libero_goal=87.6; libero_10=77.2
+libero,PearlVLA + CRG-PRL (Ours),pearlvla+crgprl,ours,98.7,https://arxiv.org/abs/2606.17924,yes,Y,EXACT,overall=98.7; libero_spatial=99.4; libero_object=99.8; libero_goal=98.4; libero_10=97.2
+libero,RynnVLA-002,rynnvla002,,97.4,https://arxiv.org/abs/2607.03461,yes,Y,EXACT,overall=97.4; libero_spatial=99.0; libero_object=99.8; libero_goal=96.4; libero_10=94.4
+libero,SmolVLA,smolvla,,,https://arxiv.org/abs/2607.27933,yes,Y,EXACT,reported_avg=80.6; (+-3 tasks)
+libero,UniVLA,univla,,94.0,https://arxiv.org/abs/2608.05970,yes,partial,PARTIAL (overall 94.0 vs paper 93.9),overall=94.0; libero_goal=91.8; libero_spatial=96.5; libero_object=95.6; libero_10=92.0
+libero,UniVLA (Bridge),univla,bridge,92.5,https://arxiv.org/abs/2505.06111,yes,Y,EXACT,overall=92.5; libero_spatial=95.2; libero_object=95.4; libero_goal=91.9; libero_10=87.5
+libero,VIPA-VLA (two-view),vipavla,two-view,96.8,https://arxiv.org/abs/2512.13080,yes,Y,EXACT,overall=96.8; libero_spatial=96.6; libero_object=98.6; libero_goal=97.0; libero_10=95.0
+libero,VQ-VLA,vqvla,,,https://arxiv.org/abs/2606.21372,yes,Y,EXACT (baseline row from third-party paper),libero_10=10.85
+libero_plus,OpenVLA*-One (zero-shot),openvla*one,zero-shot,19.4,https://arxiv.org/abs/2511.15605,yes,Y,EXACT,overall=19.4; camera=3.2; robot=14.0; language=27.6; light=25.7; background=32.7; noise=6.4
+libero_plus,π0-Fast,pi0fast,,,https://arxiv.org/abs/2603.09542,yes,Y,EXACT,reported_avg=61.6; (+-3 tasks)
+libero_pro,RATs,rats,,,https://arxiv.org/abs/2606.30613,yes,Y,EXACT,object_pos=61.0; object_task=63.0; goal_pos=43.0; goal_task=36.0; spatial_pos=29.0; spatial_task=31.0
+maniskill2,DINOv2,dinov2,,,https://arxiv.org/abs/2606.17256,yes,Y,EXACT,Lift Peg=58.33; Stack Cubes=50.0; Push Cube=100.0; (+-1 tasks)
+rlbench,Image-BC (CNN),imagebc,cnn,1.3,https://arxiv.org/abs/2506.07961,yes,Y,EXACT,overall=1.3
+rlbench,Structural Latent Points,structurallatentpoints,,,https://arxiv.org/abs/2605.21258,yes,Y,"EXACT (paper reports fractions, corpus converted to %)",open_drawer=62.0; sweep_to_dustpan=100.0; meat_off_grill=80.0; turn_tap=12.0; (+5 tasks)
+robocasa,DUST (100 demos),dust,data-budget,,https://arxiv.org/abs/2510.27607,yes,Y,EXACT (paper's 100-demo avg relabeled 'panda'),panda=50.1
+robocasa,Early Fusion,earlyfusion,,,https://arxiv.org/abs/2605.24642,yes,Y,EXACT,PnPCabToCounter_panda=32.0; PnPCounterToCab_panda=69.3; PnPCounterToMicrowave_panda=65.3; PnPCounterToSink_panda=88.0; (+4 tasks)
+robotwin_v1,Proposed Method (3D point cloud obs),proposedmethod,3d point cloud obs,,https://arxiv.org/abs/2606.19194,yes,Y,EXACT,Pick=54.6; Diverse=65.0; Dual=48.3; Empty=88.3; (+1 tasks)
+robotwin_v2,AIM Stage1,aimstage1,,,https://arxiv.org/abs/2604.11135,yes,Y,EXACT,easy=93.0; hard=92.0
+robotwin_v2,"Full-data fine-tuning (π0, joint)",fulldatafinetuning,finetune,,https://arxiv.org/abs/2606.16208,yes,Y,EXACT,easy=43.42; hard=15.44
+robotwin_v2,InternVLA-A1.5 (Ours),internvlaa1.5,ours,,https://arxiv.org/abs/2607.04988,yes,Y,EXACT,easy=93.3; hard=93.0
+simpler_env,FASTer w/o BAR,fasterw/obar,ablation,,https://arxiv.org/abs/2512.04952,yes,Y,EXACT,widowx_vm=81.0
+simpler_env,OpenVLA-OFT,openvlaoft,,,https://arxiv.org/abs/2605.24203,yes,Y,EXACT,widowx_vm=41.8
+simpler_env,RT-2-X,rt2x,,,https://arxiv.org/abs/2607.07076,yes,N,"MISMATCH (claimed 60.53; paper: VM avg 46.3, VA 54.4; 60.53 appears nowhere)",google_robot_vm=60.53
+simpler_env,RoboVLMs,robovlm,,,https://arxiv.org/abs/2508.19236,yes,Y,EXACT,widowx_vm=37.5
+vlabench,π_0-FAST,pi0fast,,49.6,https://arxiv.org/abs/2607.15330,yes,partial,"PARTIAL (suite scores exact; 'overall' 49.6 not in paper, Avg PS is 49.5 — likely LLM-recomputed)",overall=49.6; in_dist_PS=66.8; in_dist_IS=72.4; cross_category_PS=38.2; cross_category_IS=47.8; commonsense_PS=48.6; commonsense_IS=56.8

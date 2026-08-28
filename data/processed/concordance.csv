@@ -1,0 +1,3 @@
+bench_a,bench_b,n_shared,rho,ci_lo,ci_hi,ci_spans_zero
+libero,libero_plus,58,0.43,0.15,0.65,False
+libero,mikasa,8,0.69,-0.11,1.0,True

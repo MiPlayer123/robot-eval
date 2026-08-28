@@ -1,0 +1,6 @@
+benchmark,raw_name,claimed_scores,paper,notes
+calvin,RoboUniview,overall=3.65; 1_task=94.2; 2_tasks=84.2; 3_tasks=73.4; 4_tasks=62.2; 5_tasks=50.7,https://arxiv.org/abs/2505.07817,"NOT_FOUND (wrong paper cited; RoboUniView is arXiv 2406.18977, cited 2505.07817 never mentions it)"
+libero,MolmoAct,overall=86.8; libero_spatial=87.0; libero_object=95.4; libero_goal=87.6; libero_10=77.2,https://arxiv.org/abs/2602.01166,PARTIAL (object/goal columns swapped vs paper; overall 86.8 vs paper 86.6)
+libero,UniVLA,overall=94.0; libero_goal=91.8; libero_spatial=96.5; libero_object=95.6; libero_10=92.0,https://arxiv.org/abs/2608.05970,PARTIAL (overall 94.0 vs paper 93.9)
+simpler_env,RT-2-X,google_robot_vm=60.53,https://arxiv.org/abs/2607.07076,"MISMATCH (claimed 60.53; paper: VM avg 46.3, VA 54.4; 60.53 appears nowhere)"
+vlabench,π_0-FAST,overall=49.6; in_dist_PS=66.8; in_dist_IS=72.4; cross_category_PS=38.2; cross_category_IS=47.8; commonsense_PS=48.6; commonsense_IS=56.8,https://arxiv.org/abs/2607.15330,"PARTIAL (suite scores exact; 'overall' 49.6 not in paper, Avg PS is 49.5 — likely LLM-recomputed)"
