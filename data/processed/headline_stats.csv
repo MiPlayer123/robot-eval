@@ -1,0 +1,4 @@
+stat,n,median,ci_lo,ci_hi
+margin_top1_top2,356,1.9,1.6,2.2
+margin_vs_other_policy,341,2.0,1.6,2.4
+popular_cell_spread_ge5,25,14.2,4.5,21.5

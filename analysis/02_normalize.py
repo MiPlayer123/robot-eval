@@ -76,6 +76,15 @@ GENERIC = {
 # fast: a bare "FAST" row cannot be attributed without reading the paper
 KNOWN_COLLISIONS = {"univla", "fasterwam", "fast"}
 
+# Collision resolution when the row's own source paper IS one of the
+# colliding papers (first-party rows). Third-party rows stay suspect.
+COLLISION_RESOLVE = {
+    ("univla", "2505.06111"): "univla-bu",
+    ("univla", "2506.19850"): "univla-wang",
+    ("fasterwam", "2608.02365"): "fasterwam-a",
+    ("fasterwam", "2608.04404"): "fasterwam-b",
+}
+
 VARIANT_PATTERNS = [
     (re.compile(r"\b(fp16|bf16|int8|int4|w4a4|awq|gptq|quant)", re.I), "quantized"),
     (re.compile(r"\b(\d+)\s*(%|demos?|traj)", re.I), "data-budget"),
@@ -121,7 +130,12 @@ def canonicalize(raw_name: str, paper: str | None) -> tuple[str, str, bool]:
     variant = classify_variant(raw_name, parens)
     if ident in GENERIC:
         return f"{ident}::{paper_slug(paper)}", variant, False
-    return ident, variant, ident in KNOWN_COLLISIONS
+    if ident in KNOWN_COLLISIONS:
+        for (col, frag), resolved in COLLISION_RESOLVE.items():
+            if col == ident and paper and frag in paper:
+                return resolved, variant, False
+        return ident, variant, True
+    return ident, variant, False
 
 
 def main() -> None:
