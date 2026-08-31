@@ -82,19 +82,31 @@ def f1(cells, med_margin):
                 xy=(med_margin, 9.5), fontsize=8, color=MUTED,
                 xytext=(med_margin + 5, 7.0),
                 arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.8))
+    # Numeric gutter: two aligned columns so the as-mined and audited spans
+    # are never read as the same quantity. Audited column is blank (dash)
+    # where the audit did not cover the cell.
+    X_MINED, X_AUD = 112.0, 124.0
     for i, r in top.iterrows():
+        ax.annotate(f"{r.spread:.0f}", xy=(X_MINED, i), va="center",
+                    ha="right", fontsize=7.5, color=MUTED)
         if r.cell in aud.index:
             a = aud.loc[r.cell]
-            txt, x = f"{a.hi - a.lo:.0f}", max(r.hi, a.hi)
+            ax.annotate(f"{a.hi - a.lo:.0f}", xy=(X_AUD, i), va="center",
+                        ha="right", fontsize=7.5, color=BLUE)
         else:
-            txt, x = f"{r.spread:.0f}", r.hi
-        ax.annotate(txt, xy=(x + 1.2, i), va="center", fontsize=7.5,
-                    color=MUTED)
+            ax.annotate("-", xy=(X_AUD, i), va="center", ha="right",
+                        fontsize=7.5, color="#c9c8c2")
+    hy = len(top) - 0.4
+    ax.annotate("mined", xy=(X_MINED, hy), va="center", ha="right",
+                fontsize=7, color=MUTED)
+    ax.annotate("audited", xy=(X_AUD, hy), va="center", ha="right",
+                fontsize=7, color=BLUE)
     ax.set_yticks(y, top.label, fontsize=8)
     ax.set_xlabel("reported success rate across papers (%)")
     ax.set_title("Reported-score span per model-benchmark cell\n"
                  "(≥5 reporting papers)", loc="left")
-    ax.set_xlim(0, 104)
+    ax.set_xlim(0, 126)
+    ax.set_xticks([0, 20, 40, 60, 80, 100])  # gutter space is not data
     fig.tight_layout()
     for ext in ("pdf", "png"):
         fig.savefig(FIGS / f"fig_spreads.{ext}")

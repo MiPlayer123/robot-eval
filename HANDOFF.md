@@ -20,8 +20,10 @@ Last updated: 2026-08-31. Read this first when picking the project back up.
 
 - Median claimed improvement 1.9 pts [1.6, 2.2]; robust variant 2.0.
 - Median cross-paper spread of popular cells (>=5 papers) 14.2 [4.5, 21.5]
-  as mined; 6.9 after the extreme-value audit removed protocol confounds
-  and citation/extraction errors (10/20 extremes invalid).
+  as mined; 6.9 [4.3, 14.2] after the extreme-value audit removed protocol
+  confounds and citation/extraction errors (10/20 extremes invalid), over
+  the same 25 cells. Scripted in analysis/03c_audited_layer.py, which also
+  flags which surviving extremes were not themselves audited (9 of 10).
 - Cross-benchmark rank concordance 0.49 vs 0.72 within-benchmark;
   perturbation suites nearly orthogonal (median rho 0.25, 22/24 CIs
   span zero).

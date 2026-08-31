@@ -18,7 +18,7 @@ Three-layer story:
 1. AS-MINED: what any consumer of paper-mined numbers sees — median
    popular-cell spread 14.2 pts vs median claimed improvement 1.9 pts (7x).
 2. AUDITED: after dropping invalid extremes and correcting values, the
-   top-10 cells' median spread falls 32.8 -> 13.8 [6.1, 23.4] and the overall
+   top-10 cells' median spread falls 32.7 -> 13.8 [6.1, 23.4] and the overall
    >=5-paper-cell median 14.2 -> 6.9 [4.3, 14.2]. So roughly HALF the apparent
    reporting noise is protocol confounds and citation/extraction error.
 3. RESIDUAL: the remaining same-protocol spread (6.9, still 3.5x the
@@ -32,12 +32,19 @@ leaderboards + CIs (robostats).
 Limitation to state: only extremes were audited; unaudited interior
 values (and new post-correction extremes, e.g. pi0/libero's 61.1 min)
 may contain further confounds - 6.9 is an upper bound on same-protocol
-variance from this procedure, not a floor.
+variance from this procedure, not a floor. Quantified by 03c's endpoint
+provenance flags: in 9 of the 10 audited cells at least one SURVIVING
+extreme comes from a paper the audit did not cover, so the audited spans
+are themselves only partly verified. State also that the audit does not
+only shrink spreads - gr00tn1.5/libero widens 17.7 -> 17.8 because the
+95.8 -> 95.9 correction raised its max - and that the >=5-paper cell set
+is identical before and after the audit (n=25 both), so the 14.2 -> 6.9
+comparison is like-for-like rather than a change of membership.
 
 ## RESULTS STATUS (Aug 28): all three analyses run on cleaned data
 
 - Headline: median claimed improvement (top1-top2 margin per
-  paper-benchmark, n=353) is 1.9 points; the median cross-paper spread of
+  paper-benchmark, n=356) is 1.9 points; the median cross-paper spread of
   popular cells (>=5 reporting papers, n=25) is 14.2 points, i.e. ~7.5x.
   Tail: OpenVLA/LIBERO spans 61.4 pts across 18 papers; pi0/LIBERO 59.4
   across 48. Spread grows with popularity (Spearman 0.57).

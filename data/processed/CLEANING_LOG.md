@@ -104,8 +104,10 @@ per-entry evidence: extreme_audit_targets.csv + extreme_audit_corrections.csv;
 recomputed effect: extreme_audit_effect.csv. Result: 10 dropped (5
 protocol-1shot from NS-VLA 2603.09542, 2 citation errors, 1 misattribution,
 2 secondhand-derived), 3 corrected (35.6->35.7 n/a after drop, 98.4->98.5,
-95.8->95.9, 86.5->85.7 for 2601.11404), 7 kept. Effect: top-10 median
-spread 32.8->13.8; all >=5-paper cells 14.2->6.9. Name-based cleaning
+95.8->95.9, 86.5->85.7 for 2601.11404), 7 kept. Effect (scripted in
+analysis/03c_audited_layer.py, which recomputes these from the corrections
+file): top-10 median spread 32.7->13.8 [6.1, 23.4]; all >=5-paper cells
+14.2->6.9 [4.3, 14.2], over an identical set of 25 cells. Name-based cleaning
 cannot catch these - the confound lives in table headers and per-paper
 protocols, which is itself a paper finding.
 
