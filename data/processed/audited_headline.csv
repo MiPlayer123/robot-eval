@@ -1,0 +1,5 @@
+stat,n,median,ci_lo,ci_hi
+raw_ge5,25,14.2,4.5,21.5
+audited_ge5,25,6.9,4.3,14.2
+raw_top10,10,32.7,20.65,59.4
+audited_top10,10,13.75,6.1,23.4

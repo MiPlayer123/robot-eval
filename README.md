@@ -11,6 +11,7 @@ and data/processed/CLEANING_LOG.md for every data decision.
     python analysis/02b_suites.py     # suite-level table
     python analysis/03_decompose.py   # reporting-variance anatomy
     python analysis/03b_headline_ci.py # headline stats + bootstrap CIs
+    python analysis/03c_audited_layer.py # audited-layer spreads + CIs
     python analysis/04_concordance.py # cross-benchmark concordance (slow-ish)
     python analysis/05_figures.py     # paper figures
     python -m pytest robostats/tests/ # stats library tests

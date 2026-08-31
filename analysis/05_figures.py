@@ -50,23 +50,46 @@ def load_cells():
 
 
 def f1(cells, med_margin):
+    """Raw span in gray; audited span (invalid extremes removed, values
+    corrected) overlaid in blue for the cells the audit covered."""
+    import importlib
+    import sys as _sys
+    _sys.path.insert(0, str(Path(__file__).resolve().parent))
+    aud_mod = importlib.import_module("03c_audited_layer")
+    pp_aud, _ = aud_mod.apply_audit(aud_mod.per_paper_cells())
+    aud = pp_aud.groupby("cell")["score"].agg(lo="min", hi="max")
+    corr = pd.read_csv(ROOT / "data" / "processed" / "extreme_audit_corrections.csv")
+    aud = aud.loc[aud.index.intersection(corr.cell.unique())]  # audited cells only
+
     top = cells[cells.n >= 5].sort_values("spread").reset_index()
     top["label"] = top.policy_id + " / " + top.benchmark.str.replace("_", "-")
+    top["cell"] = top.policy_id + "/" + top.benchmark
     fig, ax = plt.subplots(figsize=(6.4, 5.2))
     y = np.arange(len(top))
     for i, r in top.iterrows():
-        ax.plot([r.lo, r.hi], [i, i], color=BLUE, lw=2, solid_capstyle="round",
-                zorder=2)
-    ax.scatter(top.lo, y, s=14, color=BLUE, zorder=3)
-    ax.scatter(top.hi, y, s=14, color=BLUE, zorder=3)
+        ax.plot([r.lo, r.hi], [i, i], color="#c9c8c2", lw=2,
+                solid_capstyle="round", zorder=2)
+        if r.cell in aud.index:
+            a = aud.loc[r.cell]
+            ax.plot([a.lo, a.hi], [i, i], color=BLUE, lw=2.4,
+                    solid_capstyle="round", zorder=3)
+            ax.scatter([a.lo, a.hi], [i, i], s=14, color=BLUE, zorder=4)
+    ax.plot([], [], color="#c9c8c2", lw=2, label="as mined")
+    ax.plot([], [], color=BLUE, lw=2.4, label="after source audit")
+    ax.legend(loc="lower left", frameon=False, fontsize=8)
     ax.axvline(med_margin, color=ORANGE, lw=1.4, ls="--", zorder=1)
     ax.annotate(f"median claimed\nimprovement ({med_margin:.1f} pts)",
                 xy=(med_margin, 9.5), fontsize=8, color=MUTED,
                 xytext=(med_margin + 5, 7.0),
                 arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.8))
     for i, r in top.iterrows():
-        ax.annotate(f"{r.spread:.0f}", xy=(r.hi + 1.2, i), va="center",
-                    fontsize=7.5, color=MUTED)
+        if r.cell in aud.index:
+            a = aud.loc[r.cell]
+            txt, x = f"{a.hi - a.lo:.0f}", max(r.hi, a.hi)
+        else:
+            txt, x = f"{r.spread:.0f}", r.hi
+        ax.annotate(txt, xy=(x + 1.2, i), va="center", fontsize=7.5,
+                    color=MUTED)
     ax.set_yticks(y, top.label, fontsize=8)
     ax.set_xlabel("reported success rate across papers (%)")
     ax.set_title("Reported-score span per model-benchmark cell\n"
