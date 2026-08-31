@@ -1,8 +1,0 @@
-Metadata-Version: 2.4
-Name: robostats
-Version: 0.0.1
-Summary: Honest statistics for robot policy evaluation
-License: MIT
-Requires-Python: >=3.10
-Requires-Dist: numpy
-Requires-Dist: scipy
