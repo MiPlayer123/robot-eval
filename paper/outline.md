@@ -15,8 +15,11 @@ async decoding), 2 are secondhand-derived averages papers never printed.
 3 more had value errors (0.1-0.9 pts). Only 7/20 were clean.
 
 Three-layer story:
-1. AS-MINED: what any consumer of paper-mined numbers sees — median
-   popular-cell spread 14.2 pts vs median claimed improvement 1.9 pts (7x).
+1. AS-MINED: what any consumer of paper-mined numbers sees — 26% of
+   reported scores in popular cells differ from that cell's own median by
+   more than the median claimed improvement of 1.9 pts (19% by >5 pts, 7%
+   by >10). As dispersion: median range 14.2, SD 5.3, IQR 1.3; report all
+   three, since the range inflates with the number of reporting papers.
 2. AUDITED: after dropping invalid extremes and correcting values, the
    top-10 cells' median spread falls 32.7 -> 13.8 [6.1, 23.4] and the overall
    >=5-paper-cell median 14.2 -> 6.9 [4.3, 14.2]. So roughly HALF the apparent
@@ -47,7 +50,10 @@ comparison is like-for-like rather than a change of membership.
   paper-benchmark, n=356) is 1.9 points; the median cross-paper spread of
   popular cells (>=5 reporting papers, n=25) is 14.2 points, i.e. ~7.5x.
   Tail: OpenVLA/LIBERO spans 61.4 pts across 18 papers; pi0/LIBERO 59.4
-  across 48. Spread grows with popularity (Spearman 0.57).
+  across 48. WITHDRAWN: "spread grows with popularity (Spearman 0.57)" is
+  inside a null with no popularity effect (0.59 [0.41, 0.73]); the range
+  grows with n by construction. The SD version survives (observed 0.46 vs
+  null 0.15 [-0.11, 0.38]) and is what we state.
 - Pre-registered hypothesis AS STATED not supported (median cell spread
   3.9 < raw between-benchmark spread 67) - but raw between-benchmark
   spread is a difficulty artifact; report honestly and pivot to ranks.
@@ -55,6 +61,13 @@ comparison is like-for-like rather than a change of membership.
   rho 0.72 vs cross-benchmark 0.49; only 85/173 cross pairs have CIs
   excluding zero. Perturbation suites (noise/camera) are nearly
   orthogonal to clean scores: median rho 0.25, 22/24 CIs span zero.
+- Independence: cross-paper reports are largely quotations. 301
+  paper-reports of the 25 popular cells carry 161 distinct values (47%
+  redundancy); modal value holds a median 43% of a cell; 10 of 58 cells
+  with >=3 papers have every paper reporting the identical score. So "n
+  reporting papers" is a citation count, not n measurements, and CIs over
+  papers are overconfident. This is also the mechanism behind the audit:
+  a wrong number, once printed, propagates.
 - Extraction audit: 25/30 exact, ~7% serious error rate in the
   LLM-curated corpus (wrong-paper citation; a score not in its paper);
   aggregates appear LLM-recomputed (two 0.1-pt slips). 5 escalations
@@ -92,7 +105,7 @@ should enforce. Limitations: corpus is sim-only, LLM-curated, English-
 language papers.
 
 ## Figures
-F1 spread-per-cell dot plot (the money figure)
+F1 spread-per-cell dot plot, as-mined vs post-audit (the money figure)
 F2 variance decomposition stacked bars
 F3 benchmark-by-benchmark concordance matrix with CI shading
 

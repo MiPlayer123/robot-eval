@@ -1,0 +1,11 @@
+stat,value
+reports_in_popular_cells,301.0
+distinct_values_in_popular_cells,161.0
+corpus_redundancy,0.465
+cells_all_identical_ge3papers,10.0
+cells_ge3papers,58.0
+median_modal_share,0.429
+margin_used,1.9
+frac_reports_off_median_gt_margin,0.262
+frac_reports_off_median_gt_5pts,0.189
+frac_reports_off_median_gt_10pts,0.07

@@ -5,6 +5,11 @@ import pytest
 
 from robostats import (
     clopper_pearson,
+    dispersion,
+    modal_share,
+    n_distinct,
+    prediction_interval,
+    redundancy,
     cluster_robust,
     jeffreys,
     kendall_ci,
@@ -120,3 +125,46 @@ def test_halfwidth():
 def test_min_detectable_gap_matches_inverse():
     gap = min_detectable_gap(trials=400, p_base=0.5, power=0.75)
     assert 0.06 < gap < 0.10  # inverse of the STEP anchor
+
+
+# --- heterogeneity -------------------------------------------------------
+
+def test_prediction_interval_wider_than_ci_on_the_mean():
+    x = [80.0, 81.0, 82.0, 83.0, 84.0]
+    lo, hi = prediction_interval(x)
+    n = len(x)
+    m = sum(x) / n
+    sd = (sum((v - m) ** 2 for v in x) / (n - 1)) ** 0.5
+    # a prediction interval must admit a new draw, so it is strictly wider
+    # than the CI on the mean (which scales with 1/sqrt(n), not 1+1/n)
+    assert hi - lo > 2 * 2.776 * sd / n**0.5
+    assert lo < m < hi
+
+
+def test_prediction_interval_requires_three_points():
+    with pytest.raises(ValueError):
+        prediction_interval([1.0, 2.0])
+
+
+def test_redundancy_and_modal_share():
+    assert redundancy([1.0, 2.0, 3.0]) == 0.0
+    assert redundancy([5.0, 5.0, 5.0, 5.0]) == 0.75
+    assert modal_share([5.0, 5.0, 5.0, 9.0]) == 0.75
+    assert n_distinct([5.0, 5.0, 9.0]) == 2
+
+
+def test_only_sd_is_stable_in_n_at_fixed_sigma():
+    """The reason the analysis reports SD rather than range.
+
+    At fixed sigma, range roughly doubles from n=5 to n=50; IQR and MAD
+    also drift upward because their small-sample estimates are biased low.
+    SD is the only one of the four that is comparable across cells with
+    different numbers of reporting papers.
+    """
+    rng = np.random.default_rng(0)
+    med = lambda rows, k: float(np.median([r[k] for r in rows]))
+    small = [dispersion(rng.normal(0, 1, 5)) for _ in range(400)]
+    large = [dispersion(rng.normal(0, 1, 50)) for _ in range(400)]
+    assert med(large, "spread") > 1.8 * med(small, "spread")
+    assert med(large, "iqr") > 1.2 * med(small, "iqr")
+    assert 0.9 < med(large, "sd") / med(small, "sd") < 1.2

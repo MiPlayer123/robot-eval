@@ -1,0 +1,5 @@
+statistic,n_cells,median,ci_lo,ci_hi,ratio_to_margin
+spread,25,14.2,4.5,21.5,7.1
+sd,25,5.34,1.94,7.05,2.67
+iqr,25,1.28,0.1,4.0,0.64
+mad,25,0.1,0.0,0.8,0.05

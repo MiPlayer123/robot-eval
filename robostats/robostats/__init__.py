@@ -3,11 +3,19 @@
 Permissively licensed (MIT) implementations of the statistical practices
 the robot-learning eval literature recommends but no harness enforces:
 binomial CIs, cluster-robust intervals, rank agreement with uncertainty,
-pairwise ordering agreement, and power analysis for eval design.
+pairwise ordering agreement, power analysis for eval design, and
+between-report heterogeneity for scores mined from papers.
 
 Method sources are cited in each module; this library is an engineering
 integration of published methods, not a claim of statistical novelty.
 """
+from .heterogeneity import (
+    dispersion,
+    modal_share,
+    n_distinct,
+    prediction_interval,
+    redundancy,
+)
 from .intervals import clopper_pearson, cluster_robust, jeffreys, wilson
 from .power import min_detectable_gap, trials_for_ci_halfwidth, trials_to_separate
 from .rank import kendall_ci, pairwise_ordering_agreement, spearman_ci
@@ -24,4 +32,9 @@ __all__ = [
     "trials_for_ci_halfwidth",
     "trials_to_separate",
     "min_detectable_gap",
+    "prediction_interval",
+    "redundancy",
+    "modal_share",
+    "n_distinct",
+    "dispersion",
 ]

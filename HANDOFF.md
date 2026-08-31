@@ -29,6 +29,23 @@ Last updated: 2026-08-31. Read this first when picking the project back up.
   span zero).
 - Extraction audit of the LLM-curated corpus: 25/30 exact, ~7% serious.
 
+## Open analysis items (added Aug 31 after the independence checks)
+
+1. The variance decomposition promised in PLAN.md Phase 3 and outline
+   section 3 (score = model + benchmark + reporting-paper + variant +
+   noise, figure F2 as stacked bars) does not exist. 03_decompose.py
+   computes per-cell descriptives and a MAD comparison; decomposition.csv
+   has no variance components and the real F2 is an ECDF. Given that
+   reports are not independent, fitting a variance-components model to
+   them would be wrong anyway, so the likely resolution is to rewrite the
+   section 3 claim rather than build the model. Decide before writing.
+2. Interior-value audit (~30 entries) to establish whether extremes are
+   enriched for error against the ~7% base rate. Highest-value remaining
+   evidence for the reviewer objection that auditing only extremes
+   guarantees the spread falls.
+3. Sensitivity toggles (contested merges, suspects) cover 03_decompose
+   but not 03c/03d/03e.
+
 ## Pending human items
 
 1. Adjudicate data/processed/audit_escalations.csv (5 rows) and confirm

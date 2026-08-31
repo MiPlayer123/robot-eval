@@ -1,0 +1,5 @@
+statistic,observed,null_median,null_lo,null_hi,inside_null
+spread,0.569,0.589,0.411,0.732,True
+sd,0.462,0.145,-0.113,0.38,False
+iqr,0.144,0.317,0.082,0.518,True
+mad,0.432,0.293,0.04,0.522,True

@@ -111,6 +111,38 @@ file): top-10 median spread 32.7->13.8 [6.1, 23.4]; all >=5-paper cells
 cannot catch these - the confound lives in table headers and per-paper
 protocols, which is itself a paper finding.
 
+## Independence and dispersion checks (Aug 31)
+
+Two assumptions behind the as-mined headline were tested rather than
+assumed (analysis/03d_independence.py, 03e_dispersion_sensitivity.py).
+
+1. Reports are NOT independent measurements. Across the 25 popular cells,
+   301 paper-reports carry 161 distinct values (47% redundancy); the modal
+   value holds a median 43% of a cell; in 10 of 58 cells with >=3 reporting
+   papers every paper gives the identical score to 0.1 pt (e.g. tracevla /
+   libero, six papers all at 74.8; pi0fast / libero_plus, six all at 62.5).
+   Independent evaluations do not agree to a tenth of a point six times
+   over, so these are quotations of a source number. This is ordinary
+   citation practice, not misconduct, but it means "n reporting papers" is
+   not "n independent measurements" and bootstrap CIs over papers are
+   correspondingly overconfident. Treat cross-paper counts as citation
+   counts throughout.
+
+2. Range is the wrong dispersion statistic. The range of n draws grows
+   with n at fixed dispersion, so the previously reported "spread grows
+   with popularity" (Spearman 0.57) was compared against a null in which
+   every cell shares one distribution and no popularity effect exists: the
+   null gives 0.59 [0.41, 0.73] and the observed value sits inside it.
+   That claim is withdrawn. The same null run on SD gives 0.15
+   [-0.11, 0.38] against an observed 0.46, so the SD version survives and
+   is what the paper now states. IQR and MAD also drift upward with n
+   (their small-sample estimates are biased low) and are likewise inside
+   their nulls. Only SD is comparable across cells of different
+   popularity. Dispersion is therefore reported four ways, and the
+   headline moved to a statistic that does not depend on the choice: the
+   share of reports differing from their own cell median by more than the
+   median claimed improvement (26%; 19% by >5 pts, 7% by >10 pts).
+
 ## Open items
 
 - Mikul: adjudicate the 5 rows in audit_escalations.csv (~15 min).
