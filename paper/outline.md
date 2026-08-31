@@ -18,7 +18,7 @@ Three-layer story:
 1. AS-MINED: what any consumer of paper-mined numbers sees — median
    popular-cell spread 14.2 pts vs median claimed improvement 1.9 pts (7x).
 2. AUDITED: after dropping invalid extremes and correcting values, the
-   top-10 cells' median spread falls 32.8 -> 13.8 and the overall
+   top-10 cells' median spread falls 32.8 -> 13.8 [6.1, 23.4] and the overall
    >=5-paper-cell median 14.2 -> 6.9 [4.3, 14.2]. So roughly HALF the apparent
    reporting noise is protocol confounds and citation/extraction error.
 3. RESIDUAL: the remaining same-protocol spread (6.9, still 3.5x the
